@@ -47,6 +47,16 @@ $button-size: 3.5vh;
   }
 }
 
+.rating-bar-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 4%;
+
+  padding-left: 1%;
+  padding-right: 1%;
+}
+
 .number-button {
   @include button-properties(rgba(163, 163, 163, 0.719));
 }
@@ -55,15 +65,32 @@ $button-size: 3.5vh;
   @include button-properties(#00ca9b, white);
 }
 
-.rating-bar-container {
-  display: flex;
-  justify-content: space-around;
+.connecting-bar {
+  height: 0.5vh;
+  width: 21%;
+  height: 20%;
+  background-color: rgba(163, 163, 163, 0.719);
+  transition: background-color ease-in 200ms;
+}
+
+.connecting-bar-active {
+  @extend .connecting-bar;
+  background-color: #00ca9b;
 }
 
 .rating-text {
+  padding-left: 1%;
   font-size: 2.2vh;
 }
 
 .rating-number {
   z-index: 1000;
+}
+
+.rating-name {
+  display: flex;
+  justify-content: space-between;
+  opacity: 0.6;
+  margin-left: 1%;
+  margin-right: 1%;
 }
