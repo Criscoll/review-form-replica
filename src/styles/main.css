@@ -65,6 +65,18 @@
   background-color: white;
 }
 
+.form-page h3 {
+  font-size: 1.2rem;
+  font-weight: normal;
+  margin-bottom: -0.7rem;
+}
+
+.form-page h4 {
+  font-size: 1rem;
+  font-weight: normal;
+  opacity: 0.5;
+}
+
 .rating-bar-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -196,13 +208,14 @@
 .square-button {
   border: none;
   border-radius: 0.3rem;
-  max-height: 3rem;
-  max-width: 15rem;
   min-height: 2rem;
-  min-width: 30rem;
+  max-height: 3rem;
+  min-width: 3rem;
+  max-width: 15rem;
   font-size: 1.2rem;
   background-color: rgba(195, 195, 195, 0.719);
   color: default;
+  margin: 0.3rem;
   -webkit-transition: background-color, color, ease-in 150ms;
   transition: background-color, color, ease-in 150ms;
   cursor: pointer;
@@ -215,15 +228,25 @@
 .square-button-active {
   border: none;
   border-radius: 0.3rem;
-  max-height: 3rem;
-  max-width: 15rem;
   min-height: 2rem;
-  min-width: 30rem;
+  max-height: 3rem;
+  min-width: 3rem;
+  max-width: 15rem;
   font-size: 1.2rem;
   background-color: #00ca9b;
   color: white;
+  margin: 0.3rem;
   -webkit-transition: background-color, color, ease-in 150ms;
   transition: background-color, color, ease-in 150ms;
   cursor: pointer;
+}
+
+.product-standouts-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 /*# sourceMappingURL=main.css.map */
