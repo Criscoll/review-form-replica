@@ -1,5 +1,17 @@
-#form-background {
-  background-color: rgba(224, 224, 224, 0.746);
-  border: 3px solid red;
-  height: 80vh;
+.form-background {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  background-color: rgba(240, 240, 240, 0.746);
+}
+
+.form-container {
+  height: 90vh;
+  width: 45vw;
+  margin-top: 5vh;
+  padding: 0.5vh;
+
+  box-shadow: 0 0 0.3rem rgb(195, 195, 195);
+  border-radius: 0.3rem;
+  background-color: white;
 }

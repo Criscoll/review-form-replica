@@ -1,0 +1,59 @@
+$button-size: 3.5vh;
+
+.number-button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: $button-size;
+  width: $button-size;
+
+  border-radius: 50%;
+  background-color: rgba(163, 163, 163, 0.719);
+  font-size: 1.8vh;
+  font-weight: bold;
+
+  transition: all ease-out 200ms;
+
+  cursor: pointer;
+
+  &:hover {
+    color: #00ca9b;
+    background-color: #00ca9b;
+
+    &::before {
+      content: '';
+      position: absolute;
+      height: $button-size;
+      width: $button-size;
+
+      border-radius: 50%;
+      background-color: #00ca9b;
+      transform: scale(1.2);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      height: $button-size;
+      width: $button-size;
+
+      border-radius: 50%;
+      background-color: white;
+    }
+  }
+}
+
+.active {
+  background-color: #00ca9b;
+  color: white;
+}
+
+.rating-text {
+  font-size: 2.2vh;
+}
+
+.rating-number {
+  z-index: 1000;
+}
