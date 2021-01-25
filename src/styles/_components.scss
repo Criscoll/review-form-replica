@@ -1,6 +1,6 @@
 $button-size: 3.5vh;
 
-.number-button {
+@mixin button-properties($background, $color: default) {
   position: relative;
   display: flex;
   justify-content: center;
@@ -10,34 +10,36 @@ $button-size: 3.5vh;
   width: $button-size;
 
   border-radius: 50%;
-  background-color: rgba(163, 163, 163, 0.719);
+
+  color: $color;
+  background-color: $background;
   font-size: 1.8vh;
   font-weight: bold;
-
-  transition: all ease-out 200ms;
-
   cursor: pointer;
+
+  transition: transform, color, ease-out 200ms;
 
   &:hover {
     color: #00ca9b;
     background-color: #00ca9b;
+    transform: scale(1.1);
 
-    &::before {
-      content: '';
-      position: absolute;
-      height: $button-size;
-      width: $button-size;
+    // &::before {
+    //   content: '';
+    //   position: absolute;
+    //   height: $button-size;
+    //   width: $button-size;
 
-      border-radius: 50%;
-      background-color: #00ca9b;
-      transform: scale(1.2);
-    }
+    //   border-radius: 50%;
+    //   background-color: #00ca9b;
+    //   transform: scale(1.2);
+    // }
 
     &::after {
       content: '';
       position: absolute;
-      height: $button-size;
-      width: $button-size;
+      height: $button-size - 0.7vh;
+      width: $button-size - 0.7vh;
 
       border-radius: 50%;
       background-color: white;
@@ -45,9 +47,17 @@ $button-size: 3.5vh;
   }
 }
 
-.active {
-  background-color: #00ca9b;
-  color: white;
+.number-button {
+  @include button-properties(rgba(163, 163, 163, 0.719));
+}
+
+.number-button-active {
+  @include button-properties(#00ca9b, white);
+}
+
+.rating-bar-container {
+  display: flex;
+  justify-content: space-around;
 }
 
 .rating-text {

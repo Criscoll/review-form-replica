@@ -75,42 +75,80 @@
   height: 3.5vh;
   width: 3.5vh;
   border-radius: 50%;
+  color: default;
   background-color: rgba(163, 163, 163, 0.719);
   font-size: 1.8vh;
   font-weight: bold;
-  -webkit-transition: all ease-out 200ms;
-  transition: all ease-out 200ms;
   cursor: pointer;
+  -webkit-transition: color, ease-out 200ms, -webkit-transform;
+  transition: color, ease-out 200ms, -webkit-transform;
+  transition: transform, color, ease-out 200ms;
+  transition: transform, color, ease-out 200ms, -webkit-transform;
 }
 
 .number-button:hover {
   color: #00ca9b;
   background-color: #00ca9b;
-}
-
-.number-button:hover::before {
-  content: '';
-  position: absolute;
-  height: 3.5vh;
-  width: 3.5vh;
-  border-radius: 50%;
-  background-color: #00ca9b;
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .number-button:hover::after {
   content: '';
   position: absolute;
-  height: 3.5vh;
-  width: 3.5vh;
+  height: 2.8vh;
+  width: 2.8vh;
   border-radius: 50%;
   background-color: white;
 }
 
-.active {
-  background-color: #00ca9b;
+.number-button-active {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 3.5vh;
+  width: 3.5vh;
+  border-radius: 50%;
   color: white;
+  background-color: #00ca9b;
+  font-size: 1.8vh;
+  font-weight: bold;
+  cursor: pointer;
+  -webkit-transition: color, ease-out 200ms, -webkit-transform;
+  transition: color, ease-out 200ms, -webkit-transform;
+  transition: transform, color, ease-out 200ms;
+  transition: transform, color, ease-out 200ms, -webkit-transform;
+}
+
+.number-button-active:hover {
+  color: #00ca9b;
+  background-color: #00ca9b;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.number-button-active:hover::after {
+  content: '';
+  position: absolute;
+  height: 2.8vh;
+  width: 2.8vh;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.rating-bar-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .rating-text {
