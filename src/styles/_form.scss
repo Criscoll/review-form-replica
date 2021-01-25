@@ -6,17 +6,11 @@
 }
 
 .form-page {
-  // height: 70vh;
-  // width: 35vw;
-
-  max-height: 50rem;
-  max-width: 70rem;
-
   min-height: 40rem;
-  min-width: 50rem;
+  max-height: 70rem;
 
-  // height: 40rem;
-  // width: 30rem;
+  max-width: 50rem;
+  min-width: 50rem;
 
   margin-top: 5vh;
   padding: 0.5vh;
@@ -25,15 +19,19 @@
   border-radius: 0.3rem;
   background-color: white;
 
+  h2 {
+    font-size: 1.2rem;
+  }
+
   h3 {
     font-size: 1.2rem;
     font-weight: normal;
-    margin-bottom: -0.7rem;
   }
 
   h4 {
     font-size: 1rem;
     font-weight: normal;
+    margin-top: -0.5rem;
     opacity: 0.5;
   }
 }

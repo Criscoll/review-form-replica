@@ -15,7 +15,7 @@ export default function CircleButton(props) {
   }, [props]);
 
   function handleClick() {
-    props.handleRating(props.value);
+    props.setRating(props.value);
   }
 
   return (

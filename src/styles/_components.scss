@@ -41,17 +41,17 @@ $theme-color: #00ca9b;
   border: none;
   border-radius: 0.3rem;
 
-  min-height: 2rem;
-  max-height: 3rem;
-
   min-width: 3rem;
   max-width: 15rem;
+
+  min-height: 3rem;
+  max-height: 3rem;
 
   font-size: 1.2rem;
   background-color: $background;
   color: $color;
 
-  margin: 0.3rem;
+  margin: 0.2rem;
 
   transition: background-color, color, ease-in 150ms;
   cursor: pointer;
@@ -118,7 +118,12 @@ $theme-color: #00ca9b;
   @include square-button-properties($theme-color, white);
 }
 
-.product-standouts-container {
+.square-buttons-container {
   display: flex;
   justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.bold {
+  font-weight: bold;
 }
