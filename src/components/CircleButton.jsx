@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-export default function NumberButton(props) {
+export default function CircleButton(props) {
   const [buttonClass, setButtonClass] = useState('number-button');
   const [barClass, setBarClass] = useState('connecting-bar');
 

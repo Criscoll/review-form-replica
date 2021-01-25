@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import NumberButton from './NumberButton';
+import CircleButton from './CircleButton';
 
 export default function RatingBar(props) {
   const [rating, setRating] = useState(0);
@@ -12,31 +12,31 @@ export default function RatingBar(props) {
     <React.Fragment>
       <p className="rating-text">{props.name}</p>
       <div className="rating-bar-container">
-        <NumberButton
+        <CircleButton
           value={1}
           currentRating={rating}
           handleRating={handleRating}
           hasConnectingBar={false}
         />
-        <NumberButton
+        <CircleButton
           value={2}
           currentRating={rating}
           handleRating={handleRating}
           hasConnectingBar={true}
         />
-        <NumberButton
+        <CircleButton
           value={3}
           currentRating={rating}
           handleRating={handleRating}
           hasConnectingBar={true}
         />
-        <NumberButton
+        <CircleButton
           value={4}
           currentRating={rating}
           handleRating={handleRating}
           hasConnectingBar={true}
         />
-        <NumberButton
+        <CircleButton
           value={5}
           currentRating={rating}
           handleRating={handleRating}

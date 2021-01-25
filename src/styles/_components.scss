@@ -1,6 +1,8 @@
-$button-size: 3.5vh;
+$button-size: 2rem;
+$inactive-color: rgba(195, 195, 195, 0.719);
+$theme-color: #00ca9b;
 
-@mixin button-properties($background, $color: default) {
+@mixin circle-button-properties($background, $color: default) {
   position: relative;
   display: flex;
   justify-content: center;
@@ -13,38 +15,44 @@ $button-size: 3.5vh;
 
   color: $color;
   background-color: $background;
-  font-size: 1.8vh;
-  font-weight: bold;
+  font-size: 1.2rem;
   cursor: pointer;
 
   transition: transform, color, ease-out 200ms;
 
   &:hover {
-    color: #00ca9b;
-    background-color: #00ca9b;
+    color: $theme-color;
+    background-color: $theme-color;
     transform: scale(1.1);
-
-    // &::before {
-    //   content: '';
-    //   position: absolute;
-    //   height: $button-size;
-    //   width: $button-size;
-
-    //   border-radius: 50%;
-    //   background-color: #00ca9b;
-    //   transform: scale(1.2);
-    // }
 
     &::after {
       content: '';
       position: absolute;
-      height: $button-size - 0.7vh;
-      width: $button-size - 0.7vh;
+      height: $button-size - 0.3rem;
+      width: $button-size - 0.3rem;
 
       border-radius: 50%;
       background-color: white;
     }
   }
+}
+
+@mixin square-button-properties($background, $color: default) {
+  border: none;
+  border-radius: 0.3rem;
+
+  max-height: 3rem;
+  max-width: 15rem;
+
+  min-height: 2rem;
+  min-width: 30rem;
+
+  font-size: 1.2rem;
+  background-color: $background;
+  color: $color;
+
+  transition: background-color, color, ease-in 150ms;
+  cursor: pointer;
 }
 
 .rating-bar-container {
@@ -53,34 +61,35 @@ $button-size: 3.5vh;
   align-items: center;
   height: 4%;
 
+  max-width: 50rem;
+
   padding-left: 1%;
   padding-right: 1%;
 }
 
 .number-button {
-  @include button-properties(rgba(163, 163, 163, 0.719));
+  @include circle-button-properties($inactive-color);
 }
 
 .number-button-active {
-  @include button-properties(#00ca9b, white);
+  @include circle-button-properties($theme-color, white);
 }
 
 .connecting-bar {
-  height: 0.5vh;
   width: 21%;
-  height: 20%;
-  background-color: rgba(163, 163, 163, 0.719);
+  height: 15%;
+  background-color: $inactive-color;
   transition: background-color ease-in 200ms;
 }
 
 .connecting-bar-active {
   @extend .connecting-bar;
-  background-color: #00ca9b;
+  background-color: $theme-color;
 }
 
 .rating-text {
   padding-left: 1%;
-  font-size: 2.2vh;
+  font-size: 1.4rem;
 }
 
 .rating-number {
@@ -93,4 +102,16 @@ $button-size: 3.5vh;
   opacity: 0.6;
   margin-left: 1%;
   margin-right: 1%;
+}
+
+.square-button {
+  @include square-button-properties($inactive-color);
+
+  &:hover {
+    background-color: rgba(168, 168, 168, 0.726);
+  }
+}
+
+.square-button-active {
+  @include square-button-properties($theme-color, white);
 }
