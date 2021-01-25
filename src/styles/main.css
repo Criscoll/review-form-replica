@@ -38,4 +38,10 @@
   font-size: 1.9vh;
   margin-bottom: 0;
 }
+
+#form-background {
+  background-color: rgba(224, 224, 224, 0.746);
+  border: 3px solid red;
+  height: 80vh;
+}
 /*# sourceMappingURL=main.css.map */
