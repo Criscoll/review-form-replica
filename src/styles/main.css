@@ -57,15 +57,15 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 100vh;
-  min-height: 100vh;
+  height: 200vh;
+  min-height: 200vh;
   max-height: 300vh;
   background-color: rgba(240, 240, 240, 0.746);
 }
 
 .form-page {
-  min-height: 51rem;
-  max-height: 60rem;
+  min-height: 55rem;
+  max-height: 90rem;
   min-width: 40rem;
   max-width: 45rem;
   margin-top: 5vh;
@@ -254,8 +254,9 @@
 .rating-text {
   padding-left: 1%;
   font-size: 1rem;
+  margin-top: 0.5rem;
   margin-bottom: 0.1rem;
-  opacity: 0.7;
+  opacity: 0.6;
 }
 
 .rating-number {
@@ -273,6 +274,13 @@
   opacity: 0.5;
   margin-left: 1%;
   margin-right: 1%;
+}
+
+.missing-info {
+  color: red;
+  font-size: 0.7rem;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .square-button {
@@ -324,6 +332,7 @@
 
 .country-selector-container {
   margin-top: 1rem;
+  margin-bottom: 5rem;
 }
 
 .select-up .Select-menu-outer {
@@ -347,6 +356,11 @@
   font-weight: bold;
 }
 
+.red {
+  color: red;
+  opacity: 0.5;
+}
+
 .next-btn {
   border: none;
   border-radius: 0.3rem;
@@ -365,7 +379,8 @@
   max-height: 15rem;
   min-width: 45rem;
   max-width: 55rem;
-  margin-bottom: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 180vh;
   -webkit-transition: background-color ease-out 200ms;
   transition: background-color ease-out 200ms;
 }

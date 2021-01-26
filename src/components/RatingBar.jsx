@@ -8,9 +8,19 @@ export default function RatingBar(props) {
     props.setRating(rating);
   }, [rating]);
 
+  console.log(props);
+
   return (
     <React.Fragment>
-      <p className="rating-text">{props.name}</p>
+      <p
+        className={
+          props.inputChecked && props.infoMissing
+            ? 'rating-text red'
+            : 'rating-text'
+        }
+      >
+        {props.name}
+      </p>
       <div className="rating-bar-container">
         <CircleButton
           value={1}
@@ -47,6 +57,9 @@ export default function RatingBar(props) {
         <p>Poor</p>
         <p>Excellent</p>
       </div>
+      {props.infoMissing ? (
+        <p className="missing-info">Please select a rating</p>
+      ) : null}
     </React.Fragment>
   );
 }

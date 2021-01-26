@@ -1,15 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import AboutBtn from './AboutBtn';
 import * as enumerations from '../constants/enumerations';
 
-export default function ProductStandouts() {
+export default function ProductStandouts(props) {
   const [ageRange, setAgeRange] = useState();
   const [boughtFor, setBoughtFor] = useState();
+
+  useEffect(() => {
+    const customerInfo = { ageRange: ageRange, boughtFor: boughtFor };
+    props.setCustomerInfo(customerInfo);
+  }, [ageRange, boughtFor]);
 
   return (
     <React.Fragment>
       <h2>About you</h2>
-      <h3>Age Range</h3>
+      <h3
+        className={
+          props.inputChecked && props.infoMissing.ageRange ? 'red' : ''
+        }
+      >
+        Age Range
+      </h3>
       <h4>
         Choose <span className="bold">One</span>
       </h4>
@@ -50,7 +61,16 @@ export default function ProductStandouts() {
           setValue={setAgeRange}
         />
       </div>
-      <h3>Bought For</h3>
+      {props.infoMissing.ageRange ? (
+        <p className="missing-info">Please select an answer</p>
+      ) : null}
+      <h3
+        className={
+          props.inputChecked && props.infoMissing.boughtFor ? 'red' : ''
+        }
+      >
+        Bought For
+      </h3>
       <h4>
         Choose <span className="bold">One</span>
       </h4>
@@ -66,6 +86,9 @@ export default function ProductStandouts() {
           setValue={setBoughtFor}
         />
       </div>
+      {props.infoMissing.boughtFor ? (
+        <p className="missing-info">Please select an answer</p>
+      ) : null}
     </React.Fragment>
   );
 }

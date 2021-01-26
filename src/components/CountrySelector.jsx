@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import Select from 'react-select';
 import countryList from 'react-select-country-list';
 
-export default function CountrySelector() {
+export default function CountrySelector(props) {
   const [options] = useState(countryList().getData());
-  const [value, setValue] = useState();
+  const [value, setValue] = useState({ value: 'AU', label: 'Australia' });
 
   function changeHandler(value) {
     setValue(value);
+    props.setCountry(value);
   }
 
   return (
