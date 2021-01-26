@@ -1,8 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import CircleButton from './CircleButton';
 
 export default function RatingBar(props) {
-  const [rating, setRating] = useState(0);
+  const [rating, setRating] = useState();
+
+  useEffect(() => {
+    props.setRating(rating);
+  }, [rating]);
 
   return (
     <React.Fragment>

@@ -1,9 +1,12 @@
-$button-size: 2rem;
+@import 'keyframes.scss';
+
+$button-size: 1.6rem;
 $inactive-color: rgba(195, 195, 195, 0.719);
 $theme-color: #00ca9b;
 
 @mixin circle-button-properties($background, $color: default) {
   position: relative;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,10 +18,29 @@ $theme-color: #00ca9b;
 
   color: $color;
   background-color: $background;
-  font-size: 1.2rem;
   cursor: pointer;
 
-  transition: transform, color, ease-out 200ms;
+  transition: transform, color, ease-out 150ms;
+
+  &::after {
+    content: '';
+    position: absolute;
+
+    width: 71%;
+    height: 71%;
+
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    border-radius: 50%;
+    background-color: white;
+
+    transform: scale(0);
+    transition: transform, ease-out 150ms;
+  }
 
   &:hover {
     color: $theme-color;
@@ -26,13 +48,7 @@ $theme-color: #00ca9b;
     transform: scale(1.1);
 
     &::after {
-      content: '';
-      position: absolute;
-      height: $button-size - 0.3rem;
-      width: $button-size - 0.3rem;
-
-      border-radius: 50%;
-      background-color: white;
+      transform: scale(1);
     }
   }
 }
@@ -42,12 +58,13 @@ $theme-color: #00ca9b;
   border-radius: 0.3rem;
 
   min-width: 3rem;
-  max-width: 15rem;
+  max-width: 11rem;
 
-  min-height: 3rem;
-  max-height: 3rem;
+  min-height: 2.3rem;
+  max-height: 2.8rem;
 
-  font-size: 1.2rem;
+  font-size: 0.9rem;
+
   background-color: $background;
   color: $color;
 
@@ -79,7 +96,7 @@ $theme-color: #00ca9b;
 
 .connecting-bar {
   width: 21%;
-  height: 15%;
+  height: 8%;
   background-color: $inactive-color;
   transition: background-color ease-in 200ms;
 }
@@ -91,7 +108,9 @@ $theme-color: #00ca9b;
 
 .rating-text {
   padding-left: 1%;
-  font-size: 1.4rem;
+  font-size: 1rem;
+  margin-bottom: 0.1rem;
+  opacity: 0.7;
 }
 
 .rating-number {
@@ -101,7 +120,8 @@ $theme-color: #00ca9b;
 .rating-name {
   display: flex;
   justify-content: space-between;
-  opacity: 0.6;
+  font-size: 0.8rem;
+  opacity: 0.5;
   margin-left: 1%;
   margin-right: 1%;
 }
@@ -147,4 +167,22 @@ $theme-color: #00ca9b;
 
 .bold {
   font-weight: bold;
+}
+
+.next-btn {
+  @include square-button-properties($theme-color, white);
+
+  min-height: 4rem;
+  max-height: 15rem;
+
+  min-width: 45rem;
+  max-width: 55rem;
+
+  margin-bottom: 1rem;
+
+  transition: background-color ease-out 200ms;
+
+  &:hover {
+    background-color: rgba(168, 168, 168, 0.726);
+  }
 }

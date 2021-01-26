@@ -2,17 +2,19 @@ import React, { useState, useEffect } from 'react';
 import ProductBtn from './ProductBtn';
 import * as enumerations from '../constants/enumerations';
 
-export default function ProductStandouts() {
-  const [numSelected, setNumSelected] = useState(0);
+export default function ProductStandouts(props) {
+  const [choices, setChoices] = useState([]);
   const [disableBtns, setDisableBtns] = useState(false);
 
   useEffect(() => {
-    if (numSelected === 5) {
+    props.setProductStandouts(choices);
+
+    if (choices.length === 5) {
       setDisableBtns(true);
     } else {
       setDisableBtns(false);
     }
-  });
+  }, [choices]);
 
   return (
     <React.Fragment>
@@ -21,57 +23,57 @@ export default function ProductStandouts() {
       <div className="square-standouts-container">
         <ProductBtn
           value={enumerations.productStandouts.accurateTimekeeping}
-          setNumSelected={setNumSelected}
+          setChoices={setChoices}
           disabled={disableBtns}
         />
         <ProductBtn
           value={enumerations.productStandouts.highQuality}
-          setNumSelected={setNumSelected}
+          setChoices={setChoices}
           disabled={disableBtns}
         />
         <ProductBtn
           value={enumerations.productStandouts.durable}
-          setNumSelected={setNumSelected}
+          setChoices={setChoices}
           disabled={disableBtns}
         />
         <ProductBtn
           value={enumerations.productStandouts.elegant}
-          setNumSelected={setNumSelected}
+          setChoices={setChoices}
           disabled={disableBtns}
         />
         <ProductBtn
           value={enumerations.productStandouts.goodWeight}
-          setNumSelected={setNumSelected}
+          setChoices={setChoices}
           disabled={disableBtns}
         />
         <ProductBtn
           value={enumerations.productStandouts.versatile}
-          setNumSelected={setNumSelected}
+          setChoices={setChoices}
           disabled={disableBtns}
         />
         <ProductBtn
           value={enumerations.productStandouts.looksExpensive}
-          setNumSelected={setNumSelected}
+          setChoices={setChoices}
           disabled={disableBtns}
         />
         <ProductBtn
           value={enumerations.productStandouts.attractsCompliments}
-          setNumSelected={setNumSelected}
+          setChoices={setChoices}
           disabled={disableBtns}
         />
         <ProductBtn
           value={enumerations.productStandouts.unique}
-          setNumSelected={setNumSelected}
+          setChoices={setChoices}
           disabled={disableBtns}
         />
         <ProductBtn
           value={enumerations.productStandouts.greatGift}
-          setNumSelected={setNumSelected}
+          setChoices={setChoices}
           disabled={disableBtns}
         />
         <ProductBtn
           value={enumerations.productStandouts.greatValue}
-          setNumSelected={setNumSelected}
+          setChoices={setChoices}
           disabled={disableBtns}
         />
       </div>

@@ -1,16 +1,22 @@
 .form-background {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
   height: 100vh;
+
+  min-height: 100vh;
+  max-height: 300vh;
   background-color: rgba(240, 240, 240, 0.746);
 }
 
 .form-page {
-  min-height: 40rem;
-  max-height: 75rem;
+  min-height: 51rem;
+  max-height: 60rem;
 
-  max-width: 50rem;
-  min-width: 50rem;
+  min-width: 40rem;
+  max-width: 45rem;
 
   margin-top: 5vh;
   padding: 0.5vh;
@@ -20,16 +26,16 @@
   background-color: white;
 
   h2 {
-    font-size: 1.2rem;
+    font-size: 0.9rem;
   }
 
   h3 {
-    font-size: 1.2rem;
+    font-size: 0.9rem;
     font-weight: normal;
   }
 
   h4 {
-    font-size: 1rem;
+    font-size: 0.7rem;
     font-weight: normal;
     margin-top: -0.5rem;
     opacity: 0.5;

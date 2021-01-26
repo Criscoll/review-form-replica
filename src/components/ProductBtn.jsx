@@ -8,11 +8,19 @@ export default function SquareButton(props) {
     if (buttonActive) {
       setButtonActive(false);
       setButtonClass('square-button');
-      props.setNumSelected((prevState) => prevState - 1);
+
+      props.setChoices((prevState) => {
+        const index = prevState.indexOf(props.value);
+        prevState.splice(index, 1);
+        return [...prevState];
+      });
     } else {
       setButtonActive(true);
       setButtonClass('square-button-active');
-      props.setNumSelected((prevState) => prevState + 1);
+      props.setChoices((prevState) => {
+        prevState.push(props.value);
+        return [...prevState];
+      });
     }
   }
 

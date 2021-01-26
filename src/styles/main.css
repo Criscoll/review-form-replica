@@ -13,7 +13,7 @@
       -ms-flex-pack: center;
           justify-content: center;
   min-height: 6vh;
-  max-height: 60vh;
+  max-height: 90vh;
 }
 
 .banner > h1 {
@@ -23,11 +23,11 @@
 }
 
 .banner > h2 {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: normal;
   margin-bottom: 0;
   margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.8rem;
 }
 
 .banner > h3 {
@@ -47,18 +47,27 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 100vh;
+  min-height: 100vh;
+  max-height: 300vh;
   background-color: rgba(240, 240, 240, 0.746);
 }
 
 .form-page {
-  min-height: 40rem;
-  max-height: 75rem;
-  max-width: 50rem;
-  min-width: 50rem;
+  min-height: 51rem;
+  max-height: 60rem;
+  min-width: 40rem;
+  max-width: 45rem;
   margin-top: 5vh;
   padding: 0.5vh;
   -webkit-box-shadow: 0 0 0.3rem #c3c3c3;
@@ -68,19 +77,41 @@
 }
 
 .form-page h2 {
-  font-size: 1.2rem;
+  font-size: 0.9rem;
 }
 
 .form-page h3 {
-  font-size: 1.2rem;
+  font-size: 0.9rem;
   font-weight: normal;
 }
 
 .form-page h4 {
-  font-size: 1rem;
+  font-size: 0.7rem;
   font-weight: normal;
   margin-top: -0.5rem;
   opacity: 0.5;
+}
+
+@-webkit-keyframes circle-expand {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes circle-expand {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
 }
 
 .rating-bar-container {
@@ -109,17 +140,36 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 2rem;
-  width: 2rem;
+  height: 1.6rem;
+  width: 1.6rem;
   border-radius: 50%;
   color: default;
   background-color: rgba(195, 195, 195, 0.719);
-  font-size: 1.2rem;
   cursor: pointer;
-  -webkit-transition: color, ease-out 200ms, -webkit-transform;
-  transition: color, ease-out 200ms, -webkit-transform;
-  transition: transform, color, ease-out 200ms;
-  transition: transform, color, ease-out 200ms, -webkit-transform;
+  -webkit-transition: color, ease-out 150ms, -webkit-transform;
+  transition: color, ease-out 150ms, -webkit-transform;
+  transition: transform, color, ease-out 150ms;
+  transition: transform, color, ease-out 150ms, -webkit-transform;
+}
+
+.number-button::after {
+  content: '';
+  position: absolute;
+  width: 71%;
+  height: 71%;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 50%;
+  background-color: white;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: ease-out 150ms, -webkit-transform;
+  transition: ease-out 150ms, -webkit-transform;
+  transition: transform, ease-out 150ms;
+  transition: transform, ease-out 150ms, -webkit-transform;
 }
 
 .number-button:hover {
@@ -130,12 +180,8 @@
 }
 
 .number-button:hover::after {
-  content: '';
-  position: absolute;
-  height: 1.7rem;
-  width: 1.7rem;
-  border-radius: 50%;
-  background-color: white;
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 .number-button-active {
@@ -149,17 +195,36 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 2rem;
-  width: 2rem;
+  height: 1.6rem;
+  width: 1.6rem;
   border-radius: 50%;
   color: white;
   background-color: #00ca9b;
-  font-size: 1.2rem;
   cursor: pointer;
-  -webkit-transition: color, ease-out 200ms, -webkit-transform;
-  transition: color, ease-out 200ms, -webkit-transform;
-  transition: transform, color, ease-out 200ms;
-  transition: transform, color, ease-out 200ms, -webkit-transform;
+  -webkit-transition: color, ease-out 150ms, -webkit-transform;
+  transition: color, ease-out 150ms, -webkit-transform;
+  transition: transform, color, ease-out 150ms;
+  transition: transform, color, ease-out 150ms, -webkit-transform;
+}
+
+.number-button-active::after {
+  content: '';
+  position: absolute;
+  width: 71%;
+  height: 71%;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 50%;
+  background-color: white;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: ease-out 150ms, -webkit-transform;
+  transition: ease-out 150ms, -webkit-transform;
+  transition: transform, ease-out 150ms;
+  transition: transform, ease-out 150ms, -webkit-transform;
 }
 
 .number-button-active:hover {
@@ -170,17 +235,13 @@
 }
 
 .number-button-active:hover::after {
-  content: '';
-  position: absolute;
-  height: 1.7rem;
-  width: 1.7rem;
-  border-radius: 50%;
-  background-color: white;
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 .connecting-bar, .connecting-bar-active {
   width: 21%;
-  height: 15%;
+  height: 8%;
   background-color: rgba(195, 195, 195, 0.719);
   -webkit-transition: background-color ease-in 200ms;
   transition: background-color ease-in 200ms;
@@ -192,7 +253,9 @@
 
 .rating-text {
   padding-left: 1%;
-  font-size: 1.4rem;
+  font-size: 1rem;
+  margin-bottom: 0.1rem;
+  opacity: 0.7;
 }
 
 .rating-number {
@@ -206,7 +269,8 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  opacity: 0.6;
+  font-size: 0.8rem;
+  opacity: 0.5;
   margin-left: 1%;
   margin-right: 1%;
 }
@@ -215,10 +279,10 @@
   border: none;
   border-radius: 0.3rem;
   min-width: 3rem;
-  max-width: 15rem;
-  min-height: 3rem;
-  max-height: 3rem;
-  font-size: 1.2rem;
+  max-width: 11rem;
+  min-height: 2.3rem;
+  max-height: 2.8rem;
+  font-size: 0.9rem;
   background-color: rgba(195, 195, 195, 0.719);
   color: default;
   margin: 0.2rem;
@@ -235,10 +299,10 @@
   border: none;
   border-radius: 0.3rem;
   min-width: 3rem;
-  max-width: 15rem;
-  min-height: 3rem;
-  max-height: 3rem;
-  font-size: 1.2rem;
+  max-width: 11rem;
+  min-height: 2.3rem;
+  max-height: 2.8rem;
+  font-size: 0.9rem;
   background-color: #00ca9b;
   color: white;
   margin: 0.2rem;
@@ -281,5 +345,32 @@
 
 .bold {
   font-weight: bold;
+}
+
+.next-btn {
+  border: none;
+  border-radius: 0.3rem;
+  min-width: 3rem;
+  max-width: 11rem;
+  min-height: 2.3rem;
+  max-height: 2.8rem;
+  font-size: 0.9rem;
+  background-color: #00ca9b;
+  color: white;
+  margin: 0.2rem;
+  -webkit-transition: background-color, color, ease-in 150ms;
+  transition: background-color, color, ease-in 150ms;
+  cursor: pointer;
+  min-height: 4rem;
+  max-height: 15rem;
+  min-width: 45rem;
+  max-width: 55rem;
+  margin-bottom: 1rem;
+  -webkit-transition: background-color ease-out 200ms;
+  transition: background-color ease-out 200ms;
+}
+
+.next-btn:hover {
+  background-color: rgba(168, 168, 168, 0.726);
 }
 /*# sourceMappingURL=main.css.map */
