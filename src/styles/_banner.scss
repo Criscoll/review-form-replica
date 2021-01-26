@@ -1,4 +1,7 @@
+@import 'variables.scss';
+
 .banner {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,7 +22,7 @@
       font-weight: normal;
       margin-bottom: 0;
       margin-top: 0.5rem;
-      margin-bottom: 0.8rem;
+      margin-bottom: 1.5rem;
     }
 
     h3 {
@@ -35,4 +38,52 @@
       opacity: 0.6;
     }
   }
+}
+
+.banner-button-container {
+  position: absolute;
+  bottom: -1.8rem;
+
+  display: flex;
+  justify-content: space-around;
+
+  margin: auto;
+
+  min-width: 35rem;
+  max-width: 50rem;
+}
+
+.banner-button-text-align {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.8rem;
+}
+
+.banner-button {
+  top: 9rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: $button-size;
+  width: $button-size;
+
+  margin-bottom: 0.3rem;
+
+  border-radius: 50%;
+
+  color: white;
+  background-color: white;
+
+  box-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.527);
+  cursor: pointer;
+
+  transition: transform, color, ease-out 150ms;
+}
+
+.banner-button-active {
+  @extend .banner-button;
+  background-color: $theme-color;
 }

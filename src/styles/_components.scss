@@ -1,8 +1,5 @@
 @import 'keyframes.scss';
-
-$button-size: 1.6rem;
-$inactive-color: rgba(195, 195, 195, 0.719);
-$theme-color: #00ca9b;
+@import 'variables.scss';
 
 @mixin circle-button-properties($background, $color: default) {
   position: relative;

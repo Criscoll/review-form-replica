@@ -4,8 +4,10 @@
   justify-content: space-between;
   align-items: center;
 
-  height: 200vh;
-  min-height: 200vh;
+  box-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.466);
+
+  height: 120vh;
+  min-height: 100vh;
   max-height: 300vh;
   background-color: rgba(240, 240, 240, 0.746);
 }
