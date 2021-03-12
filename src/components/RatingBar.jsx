@@ -6,9 +6,7 @@ export default function RatingBar(props) {
 
   useEffect(() => {
     props.setRating(rating);
-  }, [rating]);
-
-  console.log(props);
+  }, [rating, props]);
 
   return (
     <React.Fragment>
