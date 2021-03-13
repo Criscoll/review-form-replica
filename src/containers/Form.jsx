@@ -43,6 +43,7 @@ export default function Form() {
     if (inputChecked) {
       checkInputs();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [quality, design, experience, productStandouts, customerInfo, country]);
 
   function checkInputs() {

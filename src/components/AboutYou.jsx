@@ -9,6 +9,7 @@ export default function ProductStandouts(props) {
   useEffect(() => {
     const customerInfo = { ageRange: ageRange, boughtFor: boughtFor };
     props.setCustomerInfo(customerInfo);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ageRange, boughtFor]);
 
   return (

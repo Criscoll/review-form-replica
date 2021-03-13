@@ -14,6 +14,7 @@ export default function ProductStandouts(props) {
     } else {
       setDisableBtns(false);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [choices]);
 
   return (
